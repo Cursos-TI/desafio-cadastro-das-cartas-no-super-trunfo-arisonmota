@@ -1,12 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    // Declaração de variáveis para armazenarem os dados das cidades
 
     char estado, estado2, codigo[4], codigo2[4], cidade[25], cidade2[25];
-    int populacao, populacao2, pontos_tur, pontos_tur2;
-    float area, area2, pib, pib2;
+    int populacao = 0, populacao2 = 0, pontos_tur = 0, pontos_tur2 = 0;
+    float area = 0.0, area2 = 0.0, pib = 0.0, pib2 = 0.0;
     
     /* Cadastro da primeira Carta
     Realizada leitura dos atributos fornecidos pelo usuário*/
@@ -23,9 +22,9 @@ int main() {
     printf("Informe o PIB:\n");
     scanf("%f", &pib);
     printf("Informe o número de pontos turísticos:\n");
-    scanf("%c", &codigo);
+    scanf("%i", &pontos_tur);
 
-    /* Cadastro da primeira Carta
+    /* Cadastro da segunda Carta
     Realizada leitura dos atributos fornecidos pelo usuário*/
     printf("Informe o estado (valores de 'A' a 'H'):\n");
     scanf("%c", &estado2);
@@ -40,9 +39,10 @@ int main() {
     printf("Informe o PIB:\n");
     scanf("%f", &pib2);
     printf("Informe o número de pontos turísticos:\n");
-    scanf("%c", &codigo2);
+    scanf("%i", &pontos_tur2);
 
     // Exibição dos Dados das Cartas:
+
     
 
     return 0;
