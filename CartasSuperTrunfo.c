@@ -1,11 +1,19 @@
 #include <stdio.h>
 
+float calcula_pib_pc (float pib, int populacao) {
+    return (float)(pib / populacao);
+}
+
+float calcula_dens_pop (int populacao, float area) {
+    return (float)(populacao / area);
+}
+
 int main() {
     // Declaração de variáveis para armazenarem os dados das cidades
 
     char estado, estado2, codigo[4] = "0", codigo2[4] = "0", cidade[25], cidade2[25];
     int populacao = 0, populacao2 = 0, pontos_tur = 0, pontos_tur2 = 0;
-    float area = 0.0, area2 = 0.0, pib = 0.0, pib2 = 0.0;
+    float area = 0.0, area2 = 0.0, pib = 0.0, pib2 = 0.0, pib_pc = 0, pib_pc2 = 0, dens_pop = 0, dens_pop2 = 0;
     
     /* Cadastro da primeira Carta
     Realizada leitura dos atributos fornecidos pelo usuário*/
@@ -14,8 +22,10 @@ int main() {
     scanf("%c", &estado);
     printf("Informe o código da cidade (estado + número de 01 a 04 (ex: A01, B03)):\n");
     scanf("%s", &codigo);
+    getchar();
     printf("Informe o nome da cidade:\n");
-    scanf("%s", &cidade); 
+    fgets(cidade, sizeof(cidade), stdin); 
+    cidade[strcspn(cidade, "\n")] = '\0';
     printf("Informe o tamanho da população:\n");
     scanf("%i", &populacao);
     printf("Informe a área em Km²:\n");
@@ -32,8 +42,10 @@ int main() {
     scanf("%s", &estado2);
     printf("Informe o código da cidade (estado + número de 01 a 04 (ex: A01, B03)):\n");
     scanf("%s", &codigo2);
+    getchar();
     printf("Informe o nome da cidade:\n");
-    scanf("%s", &cidade2); 
+    fgets(cidade2, sizeof(cidade2), stdin);
+    cidade2[strcspn(cidade2, "\n")] = '\0';
     printf("Informe o tamanho da população:\n");
     scanf("%i", &populacao2);
     printf("Informe a área em Km²:\n");
@@ -42,6 +54,12 @@ int main() {
     scanf("%f", &pib2);
     printf("Informe o número de pontos turísticos:\n");
     scanf("%i", &pontos_tur2);
+
+    //Cálculo do PIB per capta e Densidade Populacional usando as funções
+    pib_pc = calcula_pib_pc(pib, populacao);
+    pib_pc2 = calcula_pib_pc(pib2, populacao2);
+    dens_pop = calcula_dens_pop(populacao, area);
+    dens_pop2 = calcula_dens_pop(populacao2, area2);
 
     // Exibição dos Dados das Cartas:
     printf("\n\n== Carta 1 ==\n");
@@ -52,14 +70,19 @@ int main() {
     printf("Área: %.2f Km²\n", area);
     printf("PIB: R$ %.2f\n", pib);
     printf("Pontos Turísticos: %i\n", pontos_tur);
+    printf("PIB per capta: %.3f\n", pib_pc);
+    printf("Densidade populacional: %.2f\n", dens_pop);
+
     printf("\n\n== Carta 2 ==\n");
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
     printf("Cidade: %s\n", cidade2);
     printf("População: %i\n", populacao2);
     printf("Área: %.2f Km²\n", area2);
-    printf("PIB: R$%.2f\n", pib2);
-    printf("Pontos Turísticos: %i\n", pontos_tur2);          
+    printf("PIB: R$ %.2f\n", pib2);
+    printf("Pontos Turísticos: %i\n", pontos_tur2);
+    printf("PIB per capta: %.3f\n", pib_pc2);
+    printf("Densidade populacional: %.2f\n", dens_pop2);         
     
     return 0;
 }
