@@ -93,7 +93,22 @@ int main() {
     printf("Superpoder: %.2f\n", superpoder2);
     
     //Comparação de valores e cálculo dos resultados
-    
+    printf("\n\n== Comparação dos Atributos ==\n");
+
+    resultado = pib_pc > pib_pc2;
+    printf("PIB per capta: %d\n", resultado);
+    resultado = dens_pop > dens_pop2;
+    printf("Densidade Populacional: %d\n", resultado);
+    resultado = superpoder > superpoder2;
+    printf("Superpoder: %s\n", resultado);
+    resultado = populacao > populacao2;
+    printf("População: %s\n", resultado);
+    resultado = area > area2;
+    printf("Área: %s\n", resultado);
+    resultado = pib > pib2;
+    printf("PIB: %s\n", resultado);
+    resultado = pontos_tur > pontos_tur2;
+    printf("Pontos turísticos: %s\n");
       
     return 0;
 }
