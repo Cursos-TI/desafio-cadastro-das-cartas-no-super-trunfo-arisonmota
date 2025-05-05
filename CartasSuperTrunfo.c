@@ -13,7 +13,8 @@ int main() {
 
     char estado, estado2, codigo[4] = "0", codigo2[4] = "0", cidade[25], cidade2[25];
     int populacao = 0, populacao2 = 0, pontos_tur = 0, pontos_tur2 = 0;
-    float area = 0.0, area2 = 0.0, pib = 0.0, pib2 = 0.0, pib_pc = 0, pib_pc2 = 0, dens_pop = 0, dens_pop2 = 0;
+    bool resultado;
+    float area = 0.0, area2 = 0.0, pib = 0.0, pib2 = 0.0, pib_pc = 0, pib_pc2 = 0, dens_pop = 0, dens_pop2 = 0, superpoder = 0.0, superpoder2 = 0.0;
     
     /* Cadastro da primeira Carta
     Realizada leitura dos atributos fornecidos pelo usuário*/
@@ -82,7 +83,13 @@ int main() {
     printf("PIB: R$ %.2f\n", pib2);
     printf("Pontos Turísticos: %i\n", pontos_tur2);
     printf("PIB per capta: %.3f\n", pib_pc2);
-    printf("Densidade populacional: %.2f\n", dens_pop2);         
+    printf("Densidade populacional: %.2f\n", dens_pop2);
+    
+    //Comparação de valores e cálculo dos resultados
+    superpoder = (float)populacao + area + pib + (float)pontos_tur + pib_pc + (1/dens_pop);
+    superpoder2 = (float)populacao2 + area2 + pib2 + (float)pontos_tur2 + pib_pc2 + (1/dens_pop2);
+
+    
     
     return 0;
 }
