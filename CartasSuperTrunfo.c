@@ -12,7 +12,8 @@ int main() {
     // Declaração de variáveis para armazenarem os dados das cidades
 
     char estado, estado2, codigo[4] = "0", codigo2[4] = "0", cidade[25], cidade2[25];
-    int populacao = 0, populacao2 = 0, pontos_tur = 0, pontos_tur2 = 0;
+    int pontos_tur = 0, pontos_tur2 = 0;
+    unsigned long int populacao = 0, populacao2 = 0;
     bool resultado;
     float area = 0.0, area2 = 0.0, pib = 0.0, pib2 = 0.0, pib_pc = 0, pib_pc2 = 0, dens_pop = 0, dens_pop2 = 0, superpoder = 0.0, superpoder2 = 0.0;
     
@@ -62,6 +63,10 @@ int main() {
     dens_pop = calcula_dens_pop(populacao, area);
     dens_pop2 = calcula_dens_pop(populacao2, area2);
 
+    //Cálculo do Superpoder
+    superpoder = (float)populacao + area + pib + (float)pontos_tur + pib_pc + (1/dens_pop);
+    superpoder2 = (float)populacao2 + area2 + pib2 + (float)pontos_tur2 + pib_pc2 + (1/dens_pop2);
+
     // Exibição dos Dados das Cartas:
     printf("\n\n== Carta 1 ==\n");
     printf("Estado: %c\n", estado);
@@ -73,7 +78,8 @@ int main() {
     printf("Pontos Turísticos: %i\n", pontos_tur);
     printf("PIB per capta: %.3f\n", pib_pc);
     printf("Densidade populacional: %.2f\n", dens_pop);
-
+    printf("Superpoder: %.2f\n", superpoder);
+    
     printf("\n\n== Carta 2 ==\n");
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
@@ -84,12 +90,10 @@ int main() {
     printf("Pontos Turísticos: %i\n", pontos_tur2);
     printf("PIB per capta: %.3f\n", pib_pc2);
     printf("Densidade populacional: %.2f\n", dens_pop2);
+    printf("Superpoder: %.2f\n", superpoder2);
     
     //Comparação de valores e cálculo dos resultados
-    superpoder = (float)populacao + area + pib + (float)pontos_tur + pib_pc + (1/dens_pop);
-    superpoder2 = (float)populacao2 + area2 + pib2 + (float)pontos_tur2 + pib_pc2 + (1/dens_pop2);
-
     
-    
+      
     return 0;
 }
