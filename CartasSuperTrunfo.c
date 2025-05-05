@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 float calcula_pib_pc (float pib, int populacao) {
     return (float)(pib / populacao);
@@ -100,15 +101,15 @@ int main() {
     resultado = dens_pop > dens_pop2;
     printf("Densidade Populacional: %d\n", resultado);
     resultado = superpoder > superpoder2;
-    printf("Superpoder: %s\n", resultado);
+    printf("Superpoder: %d\n", resultado);
     resultado = populacao > populacao2;
-    printf("População: %s\n", resultado);
+    printf("População: %d\n", resultado);
     resultado = area > area2;
-    printf("Área: %s\n", resultado);
+    printf("Área: %d\n", resultado);
     resultado = pib > pib2;
-    printf("PIB: %s\n", resultado);
+    printf("PIB: %d\n", resultado);
     resultado = pontos_tur > pontos_tur2;
-    printf("Pontos turísticos: %s\n");
+    printf("Pontos turísticos: %d\n");
       
     return 0;
 }
