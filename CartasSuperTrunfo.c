@@ -94,7 +94,7 @@ int main() {
     printf("Superpoder: %.2f\n", superpoder2);
     
     //Comparação de valores e cálculo dos resultados
-    printf("\n\n== Comparação dos Atributos ==\n");
+    printf("\n\n== Comparação dos Atributos (0: carta 1 vence / 1: Carta 2 vence) ==\n");
 
     resultado = pib_pc > pib_pc2;
     printf("PIB per capta: %d\n", resultado);
