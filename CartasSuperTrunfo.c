@@ -13,9 +13,8 @@ int main() {
     // Declaração de variáveis para armazenarem os dados das cidades
 
     char estado, estado2, codigo[4] = "0", codigo2[4] = "0", cidade[25], cidade2[25];
-    int pontos_tur = 0, pontos_tur2 = 0;
+    int pontos_tur = 0, pontos_tur2 = 0, resultado;
     unsigned long int populacao = 0, populacao2 = 0;
-    int resultado;
     float area = 0.0, area2 = 0.0, pib = 0.0, pib2 = 0.0, pib_pc = 0, pib_pc2 = 0, dens_pop = 0, dens_pop2 = 0, superpoder = 0.0, superpoder2 = 0.0;
     
     /* Cadastro da primeira Carta
@@ -23,7 +22,7 @@ int main() {
     printf("== Dados da primeira carta ==\n");
     printf("Informe o estado (valores de 'A' a 'H'):\n");
     while ((getchar()) != '\n'); // limpa qualquer lixo do buffer
-    scanf("%c", &estado);
+    scanf("%s", &estado);
     printf("Informe o código da cidade (estado + número de 01 a 04 (ex: A01, B03)):\n");
     scanf("%s", &codigo);
     getchar();
